@@ -1,7 +1,35 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    title Spooky MOT
+
+    link(href="/stylesheets/bootstrap.css", rel="stylesheet")
+    link(href='/stylesheets/style.css', rel='stylesheet')
+
   body
-    block content
+    
+    .container
+
+      nav( class="navbar navbar-default")
+        .container-fluid
+          .navbar-header
+            a.navbar-brand(href="/") Spooky MOT
+          #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href="#") Home
+              li
+                a(href="#") Upload
+              li
+                a(href="#") Run
+              
+      block content
+
+    footer
+
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/bootstrap.js")
