@@ -34,6 +34,18 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+// connect to database
+var mongoose = require('mongoose');
+
+if (app.get('env') == 'test'){
+  // connect to mongo test database
+  mongoose.connect('mongodb://localhost:27017/mot_test_1');
+} else {
+  // connect to mongo
+  mongoose.connect('mongodb://localhost:27017/mot');
+}
+
+
 // error handlers
 
 // development error handler
